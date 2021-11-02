@@ -90,6 +90,34 @@ namespace Faro
 			return cantidad;
 		}
 
+		//devuelve true si la cantidad de artículos es mayor a 0
+		public bool cantidadArticulos()
+		{
+			using (FaroEntities context = new FaroEntities())
+			{
+				int contador = context.Articuloes.Count();
+
+				if (contador > 0)
+					return true; //si encuentra al menos 1 registro devuelve true
+
+				return false; //si no hay registros devuelve false
+			}
+		}
+
+		//valida que exista al menos un vendedor
+		public bool cantidadVendedores()
+		{
+			using (FaroEntities context = new FaroEntities())
+			{
+				int contador = context.Vendedors.Count();
+
+				if (contador > 0)
+					return true; //si encuentra al menos 1 registro devuelve true
+
+				return false; //si no hay registros devuelve false
+			}
+		}
+
 		//valida que exista un artículo
 		public bool existeArticulo(int id)
 		{

@@ -34,14 +34,14 @@ namespace Faro
 				menu.Visible = true;
 			}
 			// valida que existan vendedores
-			if (!existeVendedor())
+			if (!con.cantidadVendedores())
 			{
 				MessageBox.Show("No existen vendedores registrados. Debe agregar uno");
 				this.Close();
 				menu.Visible = true;
 			}
 			//valida que existan artículos
-			if (!existeArticulo())
+			if (!con.cantidadArticulos())
 			{
 				MessageBox.Show("No existen artículos registrados. Debe agregar uno");
 				this.Close();
@@ -88,33 +88,6 @@ namespace Faro
 
 		}
 
-		//valida que exista al menos un vendedor
-		private bool existeVendedor()
-		{
-			using (FaroEntities context = new FaroEntities())
-			{
-				int contador = context.Vendedors.Count();
-
-				if (contador > 0)
-					return true; //si encuentra al menos 1 registro devuelve true
-
-				return false; //si no hay registros devuelve false
-			}
-		}
-
-		//valida que exista al menos un artículo
-		private bool existeArticulo()
-		{
-			using (FaroEntities context = new FaroEntities())
-			{
-				int contador = context.Articuloes.Count();
-
-				if (contador > 0)
-					return true; //si encuentra al menos 1 registro devuelve true
-
-				return false; //si no hay registros devuelve false
-			}
-		}
 
 		//si se cierra la ventana
 		private void FormVenta_FormClosed(object sender, FormClosedEventArgs e)
