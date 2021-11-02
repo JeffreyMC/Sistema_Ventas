@@ -8,7 +8,7 @@
 
 <a href="https://github.com/JeffreyMC/Sistema_Ventas/blob/main/LICENSE" alt="LICENSE">
 
-<img src="https://img.shields.io/github/license/JeffreyMC/Venta_Articulos" /></a>
+<img src="https://img.shields.io/github/license/JeffreyMC/Sistema_Ventas" /></a>
 
 # Programa de venta de artículos
 
