@@ -1,14 +1,6 @@
-<a href="https://github.com/JeffreyMC/" alt="JeffreyMC">
-
-<img src="https://img.shields.io/badge/JeffreyMC-Developer-red" /></a>
-
-<a href="https://twitter.com/JeffreyMC16" alt="Twitter">
-
-<img src="https://img.shields.io/twitter/follow/JeffreyMC16" /></a>
-
-<a href="https://github.com/JeffreyMC/Sistema_Ventas/blob/main/LICENSE" alt="LICENSE">
-
-<img src="https://img.shields.io/github/license/JeffreyMC/Sistema_Ventas" /></a>
+<a href="https://github.com/JeffreyMC/" alt="JeffreyMC"> <img src="https://img.shields.io/badge/JeffreyMC-Developer-red" /></a>
+<a href="https://twitter.com/JeffreyMC16" alt="Twitter"> <img src="https://img.shields.io/twitter/follow/JeffreyMC16" /></a>
+<a href="https://github.com/JeffreyMC/Sistema_Ventas/blob/main/LICENSE" alt="LICENSE"> <img src="https://img.shields.io/github/license/JeffreyMC/Sistema_Ventas" /></a>
 
 # Programa de venta de artículos
 
