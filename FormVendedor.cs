@@ -23,19 +23,6 @@ namespace Faro
 			this.menu = menu;
 		}
 
-		//valida los checkboxes de sexo (masculino y femenino)
-		private void checkBoxM_CheckedChanged(object sender, EventArgs e)
-		{
-			if (checkBoxM.Checked)
-				checkBoxF.CheckState = CheckState.Unchecked;
-		}
-
-		private void checkBoxF_CheckedChanged(object sender, EventArgs e)
-		{
-			if (checkBoxF.Checked)
-				checkBoxM.CheckState = CheckState.Unchecked;
-
-		}
 
 		//función que verifica si el ID de vendedor existe
 		public bool existeID(string id)
@@ -85,7 +72,7 @@ namespace Faro
 				Vendedor vendedor = new Vendedor();
 
 				//se validan los checkboxes
-				if (checkBoxM.Checked)
+				if (rb1.Checked)
 					vendedor.Genero = "M";
 				else
 					vendedor.Genero = "F";
@@ -129,7 +116,7 @@ namespace Faro
 			txtNombre.Text = "";
 			txtApellido1.Text = "";
 			txtApellido2.Text = "";
-			checkBoxM.Checked = true; checkBoxF.Checked = false;
+			rb1.Checked = true;
 			fechaNac.Value = DateTime.Today;
 			fechaIngreso.Value = DateTime.Today;
 		}

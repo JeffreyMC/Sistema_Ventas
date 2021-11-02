@@ -42,8 +42,8 @@ namespace Faro
 			txtCantidadDisponible.Enabled = false;
 			txtPrecioVendedor.Enabled = false;
 			txtPrecioFinal.Enabled = false;
-			checkBoxA.Enabled = false;
-			checkBoxD.Enabled = false;
+			rb1.Enabled = false;
+			rb2.Enabled = false;
 		}
 
 		//valida de que solo se agreguen numeros
@@ -72,8 +72,8 @@ namespace Faro
 				txtPrecioVendedor.Enabled = true;
 				txtPrecioFinal.Enabled = true;
 				txtCantidadDisponible.Enabled = true;
-				checkBoxA.Enabled = true;
-				checkBoxD.Enabled = true;
+				rb1.Enabled = true;
+				rb2.Enabled = true;
 
 				//se busca el artículo
 				Articulo articulo;
@@ -88,9 +88,9 @@ namespace Faro
 				txtPrecioFinal.Text = articulo.PrecioFinal.ToString();
 				txtCantidadDisponible.Text = articulo.CantidadDisponible.ToString();
 				if (articulo.Activo == true)
-					checkBoxA.Checked = true;
+					rb1.Checked = true;
 				else
-					checkBoxD.Checked = true;
+					rb2.Checked = true;
 			}
 			else
 			{
@@ -99,18 +99,6 @@ namespace Faro
 			}
 		}
 
-		//valida las opciones con el check
-		private void checkBoxA_CheckedChanged(object sender, EventArgs e)
-		{
-			if (checkBoxA.Checked)
-				checkBoxD.CheckState = CheckState.Unchecked;
-		}
-
-		private void checkBoxD_CheckedChanged(object sender, EventArgs e)
-		{
-			if (checkBoxD.Checked)
-				checkBoxA.CheckState = CheckState.Unchecked;
-		}
 
 		//actualiza el artículo
 		private void btnAddArticulo_Click(object sender, EventArgs e)
@@ -131,7 +119,7 @@ namespace Faro
 					art.PrecioFinal = decimal.Parse(txtPrecioFinal.Text);
 					art.CantidadDisponible = int.Parse(txtCantidadDisponible.Text);
 
-					if (checkBoxA.Checked)
+					if (rb1.Checked)
 						art.Activo = true;
 					else
 						art.Activo = false;
@@ -151,8 +139,8 @@ namespace Faro
 					txtPrecioVendedor.Enabled = false;
 					txtPrecioFinal.Enabled = false;
 					txtCantidadDisponible.Enabled = false;
-					checkBoxA.Enabled = false;
-					checkBoxD.Enabled = false;
+					rb1.Enabled = false;
+					rb2.Enabled = false;
 
 					//se reinician los campos
 					txtDescripcion.Text = "";

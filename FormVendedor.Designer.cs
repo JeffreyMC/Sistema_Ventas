@@ -37,20 +37,21 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.checkBoxF = new System.Windows.Forms.CheckBox();
-			this.checkBoxM = new System.Windows.Forms.CheckBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtApellido1 = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.txtId = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnVolver = new System.Windows.Forms.Button();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.rb1 = new System.Windows.Forms.RadioButton();
+			this.rb2 = new System.Windows.Forms.RadioButton();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnAddVendedor
@@ -69,19 +70,17 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.groupBox2);
 			this.groupBox1.Controls.Add(this.fechaIngreso);
 			this.groupBox1.Controls.Add(this.fechaNac);
 			this.groupBox1.Controls.Add(this.txtApellido2);
 			this.groupBox1.Controls.Add(this.label8);
 			this.groupBox1.Controls.Add(this.txtNombre);
 			this.groupBox1.Controls.Add(this.label7);
-			this.groupBox1.Controls.Add(this.checkBoxF);
-			this.groupBox1.Controls.Add(this.checkBoxM);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.txtApellido1);
 			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.txtId);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Location = new System.Drawing.Point(27, 83);
@@ -140,32 +139,6 @@
 			this.label7.TabIndex = 12;
 			this.label7.Text = "Nombre";
 			// 
-			// checkBoxF
-			// 
-			this.checkBoxF.AutoSize = true;
-			this.checkBoxF.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.checkBoxF.Location = new System.Drawing.Point(435, 116);
-			this.checkBoxF.Name = "checkBoxF";
-			this.checkBoxF.Size = new System.Drawing.Size(32, 17);
-			this.checkBoxF.TabIndex = 11;
-			this.checkBoxF.Text = "F";
-			this.checkBoxF.UseVisualStyleBackColor = true;
-			this.checkBoxF.CheckedChanged += new System.EventHandler(this.checkBoxF_CheckedChanged);
-			// 
-			// checkBoxM
-			// 
-			this.checkBoxM.AutoSize = true;
-			this.checkBoxM.Checked = true;
-			this.checkBoxM.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBoxM.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.checkBoxM.Location = new System.Drawing.Point(393, 116);
-			this.checkBoxM.Name = "checkBoxM";
-			this.checkBoxM.Size = new System.Drawing.Size(35, 17);
-			this.checkBoxM.TabIndex = 10;
-			this.checkBoxM.Text = "M";
-			this.checkBoxM.UseVisualStyleBackColor = true;
-			this.checkBoxM.CheckedChanged += new System.EventHandler(this.checkBoxM_CheckedChanged);
-			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
@@ -205,17 +178,6 @@
 			this.label4.Size = new System.Drawing.Size(100, 16);
 			this.label4.TabIndex = 4;
 			this.label4.Text = "Primer Apellido";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.label3.Location = new System.Drawing.Point(390, 88);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(39, 16);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "Sexo";
 			// 
 			// txtId
 			// 
@@ -271,6 +233,42 @@
 			this.btnVolver.UseVisualStyleBackColor = false;
 			this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.rb2);
+			this.groupBox2.Controls.Add(this.rb1);
+			this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
+			this.groupBox2.Location = new System.Drawing.Point(393, 87);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(239, 46);
+			this.groupBox2.TabIndex = 18;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Sexo";
+			// 
+			// rb1
+			// 
+			this.rb1.AutoSize = true;
+			this.rb1.Checked = true;
+			this.rb1.Location = new System.Drawing.Point(54, 18);
+			this.rb1.Name = "rb1";
+			this.rb1.Size = new System.Drawing.Size(37, 20);
+			this.rb1.TabIndex = 0;
+			this.rb1.TabStop = true;
+			this.rb1.Text = "M";
+			this.rb1.UseVisualStyleBackColor = true;
+			// 
+			// rb2
+			// 
+			this.rb2.AutoSize = true;
+			this.rb2.Location = new System.Drawing.Point(131, 18);
+			this.rb2.Name = "rb2";
+			this.rb2.Size = new System.Drawing.Size(34, 20);
+			this.rb2.TabIndex = 1;
+			this.rb2.TabStop = true;
+			this.rb2.Text = "F";
+			this.rb2.UseVisualStyleBackColor = true;
+			// 
 			// FormVendedor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +287,8 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -298,13 +298,10 @@
 
 		private System.Windows.Forms.Button btnAddVendedor;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.CheckBox checkBoxF;
-		private System.Windows.Forms.CheckBox checkBoxM;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtApellido1;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox txtId;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.PictureBox pictureBox1;
@@ -316,5 +313,8 @@
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.DateTimePicker fechaIngreso;
 		private System.Windows.Forms.Button btnVolver;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.RadioButton rb2;
+		private System.Windows.Forms.RadioButton rb1;
 	}
 }

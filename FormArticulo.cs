@@ -23,19 +23,6 @@ namespace Faro
 			this.menu = menu;
 		}
 
-		//cambia los estados de los checkboxes
-		private void checkBox1_CheckedChanged(object sender, EventArgs e)
-		{
-			if (checkBox1.Checked)
-				checkBox2.CheckState = CheckState.Unchecked;
-		}
-
-		private void checkBox2_CheckedChanged(object sender, EventArgs e)
-		{
-			if (checkBox2.Checked)
-				checkBox1.CheckState = CheckState.Unchecked;
-		}
-
 		private void btnAddArticulo_Click(object sender, EventArgs e)
 		{
 			ConexionBD con = new ConexionBD();
@@ -49,7 +36,7 @@ namespace Faro
 			{
 				//se verifican los checkboxes
 				bool activo;
-				if (checkBox1.Checked)
+				if (rb1.Checked)
 					activo = true;
 				else
 					activo = false;
@@ -164,6 +151,5 @@ namespace Faro
 		{
 			menu.Visible = true;
 		}
-
 	}
 }

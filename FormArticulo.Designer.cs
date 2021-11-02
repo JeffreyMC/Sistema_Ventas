@@ -32,21 +32,22 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.txtPrecioFinal = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtPrecioVendedor = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.txtDescripcion = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnAddArticulo = new System.Windows.Forms.Button();
 			this.btnVolver = new System.Windows.Forms.Button();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.rb1 = new System.Windows.Forms.RadioButton();
+			this.rb2 = new System.Windows.Forms.RadioButton();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -72,15 +73,13 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.checkBox2);
-			this.groupBox1.Controls.Add(this.checkBox1);
+			this.groupBox1.Controls.Add(this.groupBox2);
 			this.groupBox1.Controls.Add(this.txtPrecioFinal);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.txtPrecioVendedor);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.txtCantidadDisponible);
 			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.txtDescripcion);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Location = new System.Drawing.Point(27, 82);
@@ -88,32 +87,6 @@
 			this.groupBox1.Size = new System.Drawing.Size(685, 254);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
-			// 
-			// checkBox2
-			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.checkBox2.Location = new System.Drawing.Point(68, 115);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(42, 17);
-			this.checkBox2.TabIndex = 11;
-			this.checkBox2.Text = "NO";
-			this.checkBox2.UseVisualStyleBackColor = true;
-			this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Checked = true;
-			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.checkBox1.Location = new System.Drawing.Point(26, 115);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(36, 17);
-			this.checkBox1.TabIndex = 10;
-			this.checkBox1.Text = "SÍ";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
 			// 
 			// txtPrecioFinal
 			// 
@@ -172,17 +145,6 @@
 			this.label4.TabIndex = 4;
 			this.label4.Text = "Cantidad disponible";
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.label3.Location = new System.Drawing.Point(23, 87);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(45, 16);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "Activo";
-			// 
 			// txtDescripcion
 			// 
 			this.txtDescripcion.Location = new System.Drawing.Point(26, 35);
@@ -229,6 +191,41 @@
 			this.btnVolver.UseVisualStyleBackColor = false;
 			this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.rb2);
+			this.groupBox2.Controls.Add(this.rb1);
+			this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
+			this.groupBox2.Location = new System.Drawing.Point(26, 87);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(200, 58);
+			this.groupBox2.TabIndex = 12;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Activo";
+			// 
+			// rb1
+			// 
+			this.rb1.AutoSize = true;
+			this.rb1.Checked = true;
+			this.rb1.Location = new System.Drawing.Point(55, 26);
+			this.rb1.Name = "rb1";
+			this.rb1.Size = new System.Drawing.Size(38, 20);
+			this.rb1.TabIndex = 0;
+			this.rb1.TabStop = true;
+			this.rb1.Text = "SÍ";
+			this.rb1.UseVisualStyleBackColor = true;
+			// 
+			// rb2
+			// 
+			this.rb2.AutoSize = true;
+			this.rb2.Location = new System.Drawing.Point(111, 26);
+			this.rb2.Name = "rb2";
+			this.rb2.Size = new System.Drawing.Size(46, 20);
+			this.rb2.TabIndex = 1;
+			this.rb2.Text = "NO";
+			this.rb2.UseVisualStyleBackColor = true;
+			// 
 			// FormArticulo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +244,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -260,15 +259,15 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtCantidadDisponible;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox txtDescripcion;
-		private System.Windows.Forms.CheckBox checkBox2;
-		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.TextBox txtPrecioFinal;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtPrecioVendedor;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button btnAddArticulo;
 		private System.Windows.Forms.Button btnVolver;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.RadioButton rb2;
+		private System.Windows.Forms.RadioButton rb1;
 	}
 }
