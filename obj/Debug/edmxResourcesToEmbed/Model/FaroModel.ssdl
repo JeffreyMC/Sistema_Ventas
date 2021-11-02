@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FaroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="IdArticulo" />
+    </Key>
+    <Property Name="IdArticulo" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="PrecioVendedor" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PrecioFinal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CantidadDisponible" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenCompra">
+    <Key>
+      <PropertyRef Name="IdOrden" />
+    </Key>
+    <Property Name="IdOrden" Type="int" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenCompraDetalle">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdDetalle" Type="int" Nullable="false" />
+    <Property Name="IdOrden" Type="int" Nullable="false" />
+    <Property Name="IdArticulo" Type="int" Nullable="false" />
+    <Property Name="CantidadArticulo" Type="int" Nullable="false" />
+    <Property Name="PrecioVendedor" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PrecioFinal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Vendedor">
+    <Key>
+      <PropertyRef Name="Identificacion" />
+    </Key>
+    <Property Name="Identificacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrimerApellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SegundoApellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="Genero" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FechaIngreso" Type="date" />
+  </EntityType>
+  <Association Name="FK_OrdenCompra_Vendedor">
+    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
+    <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendedor">
+        <PropertyRef Name="Identificacion" />
+      </Principal>
+      <Dependent Role="OrdenCompra">
+        <PropertyRef Name="Identificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrdenCompraDetalle_Articulo">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="OrdenCompraDetalle" Type="Self.OrdenCompraDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="IdArticulo" />
+      </Principal>
+      <Dependent Role="OrdenCompraDetalle">
+        <PropertyRef Name="IdArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrdenCompraDetalle_OrdenCompra">
+    <End Role="OrdenCompra" Type="Self.OrdenCompra" Multiplicity="1" />
+    <End Role="OrdenCompraDetalle" Type="Self.OrdenCompraDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenCompra">
+        <PropertyRef Name="IdOrden" />
+      </Principal>
+      <Dependent Role="OrdenCompraDetalle">
+        <PropertyRef Name="IdOrden" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FaroModelStoreContainer">
+    <EntitySet Name="Articulo" EntityType="Self.Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenCompra" EntityType="Self.OrdenCompra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenCompraDetalle" EntityType="Self.OrdenCompraDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendedor" EntityType="Self.Vendedor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_OrdenCompra_Vendedor" Association="Self.FK_OrdenCompra_Vendedor">
+      <End Role="Vendedor" EntitySet="Vendedor" />
+      <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrdenCompraDetalle_Articulo" Association="Self.FK_OrdenCompraDetalle_Articulo">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="OrdenCompraDetalle" EntitySet="OrdenCompraDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrdenCompraDetalle_OrdenCompra" Association="Self.FK_OrdenCompraDetalle_OrdenCompra">
+      <End Role="OrdenCompra" EntitySet="OrdenCompra" />
+      <End Role="OrdenCompraDetalle" EntitySet="OrdenCompraDetalle" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
