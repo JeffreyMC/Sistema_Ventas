@@ -41,7 +41,7 @@ namespace Faro
 				menu.Visible = true;
 			}
 			//valida que existan artículos
-			if (!con.cantidadArticulos())
+			else if (!con.cantidadArticulos())
 			{
 				MessageBox.Show("No existen artículos registrados. Debe agregar uno");
 				this.Close();
