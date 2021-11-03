@@ -21,6 +21,7 @@ Programa que permite gestionar el control y venta de artículos.
 * Uso de SQL Server.
 * Uso de Visual Studio 2019.
 * Windows 10.
+* Incluye el script de la base de datos.
 
 ## Capturas
 
