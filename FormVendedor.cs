@@ -23,21 +23,6 @@ namespace Faro
 			this.menu = menu;
 		}
 
-
-		//función que verifica si el ID de vendedor existe
-		public bool existeID(string id)
-		{
-			using (FaroEntities context = new FaroEntities())
-			{
-				//obtiene el vendedor de la base de datos
-				var articulo = context.Vendedors.FirstOrDefault(a => a.Identificacion.Equals(id));
-
-				if (articulo != null)
-					return true; //si existe el artículo retorna true
-				return false; //si no existe retorna false
-			}
-		}
-
 		//vuelve al menú principal
 		private void btnVolver_Click(object sender, EventArgs e)
 		{
@@ -54,9 +39,9 @@ namespace Faro
 				MessageBox.Show("Error en conexión a la base de datos. Verifique la ruta");
 			}
 			//verifica que el ID no exista
-			else if (existeID(txtId.Text))
+			else if (con.existeVendedor(txtId.Text))
 			{
-				MessageBox.Show("Ya existe´la identificación " + txtId.Text);
+				MessageBox.Show("Ya existe la identificación " + txtId.Text);
 
 				//solo limpia el campo de identificacion
 				txtId.Text = "";

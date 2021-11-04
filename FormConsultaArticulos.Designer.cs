@@ -56,7 +56,9 @@
             this.Column5,
             this.Column6});
 			this.tablaArticulos.Location = new System.Drawing.Point(27, 70);
+			this.tablaArticulos.MultiSelect = false;
 			this.tablaArticulos.Name = "tablaArticulos";
+			this.tablaArticulos.ReadOnly = true;
 			this.tablaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.tablaArticulos.Size = new System.Drawing.Size(645, 416);
 			this.tablaArticulos.TabIndex = 22;
@@ -65,31 +67,37 @@
 			// 
 			this.Column1.HeaderText = "ID Artículo";
 			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
 			// 
 			// Column2
 			// 
 			this.Column2.HeaderText = "Descripción";
 			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
 			// 
 			// Column3
 			// 
 			this.Column3.HeaderText = "Activo";
 			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
 			// 
 			// Column4
 			// 
 			this.Column4.HeaderText = "Precio Vendedor";
 			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
 			// 
 			// Column5
 			// 
 			this.Column5.HeaderText = "Precio Final";
 			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
 			// 
 			// Column6
 			// 
 			this.Column6.HeaderText = "Cantidad disponible";
 			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
 			// 
 			// label1
 			// 

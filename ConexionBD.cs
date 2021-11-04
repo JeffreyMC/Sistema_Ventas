@@ -134,5 +134,19 @@ namespace Faro
 			return true; //si existe devuelve true
 
 		}
+
+		//función que verifica si el ID de vendedor existe
+		public bool existeVendedor(string id)
+		{
+			using (FaroEntities context = new FaroEntities())
+			{
+				//obtiene el vendedor de la base de datos
+				var articulo = context.Vendedors.FirstOrDefault(a => a.Identificacion.Equals(id));
+
+				if (articulo != null)
+					return true; //si existe el artículo retorna true
+				return false; //si no existe retorna false
+			}
+		}
 	}
 }
